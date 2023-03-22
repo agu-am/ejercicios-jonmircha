@@ -54,13 +54,33 @@ repetirTexto("hOLA ", 2)
 
 // 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
 
-const invertirCadena = (cadena) => 
-!(typeof cadena === 'string') 
-? console.log("Ingresa un texto")
-: console.log(cadena.split("").reverse().join(""));
+const invertirCadena = (cadena) =>
+    !(typeof cadena === 'string')
+        ? console.log("Ingresa un texto")
+        : console.log(cadena.split("").reverse().join(""));
 
 invertirCadena("Hola mundo")
 
 // 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+const contarPalabra = (texto, palabra) => {
+    if (typeof texto !== 'string') {
+        console.log("Ingrese un texto");
+    }
+    if (typeof palabra !== 'string') {
+        console.log("Ingrese una palabra");
+    }
+    texto = texto.toLowerCase();
+    palabra = palabra.toLowerCase();
+
+    const palabras = texto.split(" ");
+
+    const coincidencias = palabras.filter(palabraActual => palabraActual === palabra).length;
+
+    return coincidencias
+}
+
+console.log(contarPalabra('Hola Mundo Hola', 'hola'));
+
 // 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
 // 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
