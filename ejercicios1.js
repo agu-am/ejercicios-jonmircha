@@ -100,10 +100,30 @@ esPalindromo("aliendor")
 
 // 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
 
-const eliminarPatron = (texto , patron) => {
-    if(typeof texto !== 'string')console.log('No ingresaste un texto');
-    if(typeof patron !== 'string')console.log('No ingresaste un patron');
+const eliminarPatron = (texto, patron) => {
+    if (typeof texto !== 'string') console.log('No ingresaste un texto');
+    if (typeof patron !== 'string') console.log('No ingresaste un patron');
     return console.log(texto.replace(new RegExp(patron, 'ig'), ''));
 }
 
 eliminarPatron("asad", 'a')
+
+// 9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+
+const numeroAleatorio = () => console.log(Math.round(Math.random() * 100) + 500);
+
+numeroAleatorio();
+
+// 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+
+const numeroCapicua = (numero) => {
+    if (typeof numero !== 'number') return console.log('No ingresaste un numero');
+    const numeroAString = numero.toString();
+    const numeroReverso = numeroAString.split('').reverse().join('');
+    return (numeroAString === numeroReverso)
+        ? console.log(`El numero ${numero} es capicua`)
+        : console.log(`El numero ${numero} no es capicua`);
+}
+numeroCapicua(5665)
+
+// 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
