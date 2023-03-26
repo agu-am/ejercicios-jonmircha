@@ -83,4 +83,27 @@ const contarPalabra = (texto, palabra) => {
 console.log(contarPalabra('Hola Mundo Hola', 'hola'));
 
 // 7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+
+const esPalindromo = (palabra) => {
+    if (typeof palabra !== 'string') console.log('Ingrese una palabra');
+
+    palabra = palabra.toLowerCase();
+
+    let alReves = palabra.split('').reverse().join('');
+
+    return (palabra === alReves)
+        ? console.log(`${palabra} es palíndromo`)
+        : console.log(`${palabra} NO es palíndromo`);
+
+}
+esPalindromo("aliendor")
+
 // 8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+
+const eliminarPatron = (texto , patron) => {
+    if(typeof texto !== 'string')console.log('No ingresaste un texto');
+    if(typeof patron !== 'string')console.log('No ingresaste un patron');
+    return console.log(texto.replace(new RegExp(patron, 'ig'), ''));
+}
+
+eliminarPatron("asad", 'a')
