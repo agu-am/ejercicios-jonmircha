@@ -161,7 +161,12 @@ const esPrimo = (numero) => {
 
 esPrimo(7)
 
-
-
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+
+const esPar = (numero) => (numero % 2 === 0)
+    ? console.log(`El numero ${numero} es par`)
+    : console.log(`El numero ${numero} es impar`)
+
+esPar(2)
+
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
