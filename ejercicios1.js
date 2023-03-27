@@ -179,3 +179,21 @@ const esPar = (numero) => {
 esPar(2)
 
 // 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+
+const conversionTemperatura = (grados, escala) => {
+    if (typeof grados !== 'number') console.log('No ingresaste grados correctamente');
+    if (typeof escala !== 'string') console.log('No ingresaste la escala correctamente');
+
+    escalaMinuscula = escala.toLowerCase();
+
+    if (escalaMinuscula !== "c" && escalaMinuscula !== "f") console.log('No ingresaste la escala correcta');
+
+    if (escalaMinuscula === "c") {
+        return `32°C es igual a ${(grados * (9 / 5)) + 32}°F`
+    }
+    if (escalaMinuscula === "f") {
+        return `32°F es igual a ${(grados - 32) * (9 / 5)}°C`
+    }
+}
+
+conversionTemperatura(32, 2)
