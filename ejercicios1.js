@@ -196,4 +196,22 @@ const conversionTemperatura = (grados, escala) => {
     }
 }
 
-conversionTemperatura(32,"c");
+conversionTemperatura(32, "c");
+
+// 15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+
+const binarioADecimal = (numero, base) => {
+
+    if(typeof numero !== 'number') console.log('No ingresaste un numero');
+    if(typeof base !== 'number') console.log('No ingresaste un numero');
+
+    if (base === 2){
+        return console.log(`${numero} base ${base} = ${parseInt(numero, base)} base 10`);
+    } else if (base === 10){
+        return console.log(`${numero} base ${base} = ${numero.toString(2)} base 2`);
+    }
+}
+
+binarioADecimal(4,10)
+// 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+// 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
