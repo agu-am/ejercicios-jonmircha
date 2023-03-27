@@ -189,11 +189,11 @@ const conversionTemperatura = (grados, escala) => {
     if (escalaMinuscula !== "c" && escalaMinuscula !== "f") console.log('No ingresaste la escala correcta');
 
     if (escalaMinuscula === "c") {
-        return `32°C es igual a ${(grados * (9 / 5)) + 32}°F`
+        return console.log(`32°C es igual a ${(grados * (9 / 5)) + 32}°F`);
     }
     if (escalaMinuscula === "f") {
-        return `32°F es igual a ${(grados - 32) * (9 / 5)}°C`
+        return console.log(`32°F es igual a ${(grados - 32) * (9 / 5)}°C`);
     }
 }
 
-conversionTemperatura(32, 2)
+conversionTemperatura(32,"c");
