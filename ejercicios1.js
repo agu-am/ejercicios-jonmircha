@@ -149,7 +149,7 @@ const esPrimo = (numero) => {
 
     if (typeof numero !== 'number') console.log('No ingresaste un numero');
     if (!(numero > 0)) console.log('No ingresaste un numero positivo');
-    
+
     let divisible = false;
     for (let i = 2; i < numero; i++) {
         if (numero % i === 0) {
@@ -167,9 +167,14 @@ esPrimo(2)
 
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 
-const esPar = (numero) => (numero % 2 === 0)
-    ? console.log(`El numero ${numero} es par`)
-    : console.log(`El numero ${numero} es impar`)
+const esPar = (numero) => {
+    if (typeof numero !== 'number') console.log('No ingresaste un numero');
+    if (!(numero > 0)) console.log('No ingresaste un numero positivo');
+
+    return (numero % 2 === 0)
+        ? console.log(`El numero ${numero} es par`)
+        : console.log(`El numero ${numero} es impar`)
+}
 
 esPar(2)
 
