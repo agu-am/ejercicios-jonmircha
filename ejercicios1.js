@@ -127,3 +127,41 @@ const numeroCapicua = (numero) => {
 numeroCapicua(5665)
 
 // 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+
+const factorial = (numero) => {
+    if (typeof numero === 'number' && numero <= 0) {
+
+        let producto = 1;
+
+        for (let i = 1; i <= numero; i++) {
+            producto *= i;
+        }
+        return producto
+    } else {
+        return console.log('No ingresaste un numero o el numero es negativo');
+    }
+}
+
+factorial(6)
+
+// 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+const esPrimo = (numero) => {
+    let divisible = false;
+    for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            divisible = true;
+            break;
+        }
+    }
+
+    return (divisible)
+        ? console.log(`El numero ${numero} no es primo.`)
+        : console.log(`El numero ${numero} es primo.`);
+}
+
+esPrimo(7)
+
+
+
+// 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+// 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
