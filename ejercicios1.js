@@ -146,6 +146,10 @@ factorial(6)
 
 // 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
 const esPrimo = (numero) => {
+
+    if (typeof numero !== 'number') console.log('No ingresaste un numero');
+    if (!(numero > 0)) console.log('No ingresaste un numero positivo');
+    
     let divisible = false;
     for (let i = 2; i < numero; i++) {
         if (numero % i === 0) {
@@ -159,7 +163,7 @@ const esPrimo = (numero) => {
         : console.log(`El numero ${numero} es primo.`);
 }
 
-esPrimo(7)
+esPrimo(2)
 
 // 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
 
