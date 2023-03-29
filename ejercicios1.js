@@ -202,16 +202,43 @@ conversionTemperatura(32, "c");
 
 const binarioADecimal = (numero, base) => {
 
-    if(typeof numero !== 'number') console.log('No ingresaste un numero');
-    if(typeof base !== 'number') console.log('No ingresaste un numero');
+    if (typeof numero !== 'number') console.log('No ingresaste un numero');
+    if (typeof base !== 'number') console.log('No ingresaste un numero');
 
-    if (base === 2){
+    if (base === 2) {
         return console.log(`${numero} base ${base} = ${parseInt(numero, base)} base 10`);
-    } else if (base === 10){
+    } else if (base === 10) {
         return console.log(`${numero} base ${base} = ${numero.toString(2)} base 2`);
     }
 }
 
-binarioADecimal(4,10)
+binarioADecimal(4, 10)
 // 16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+
+const descuento = (monto, descuento) => {
+    if (typeof monto !== 'number') return console.log('No ingresaste un monto correcto');
+    if (typeof descuento !== 'number') return console.log('No ingresaste un descuento correcto');
+    if (descuento <= 0) return console.log('El descuento debe ser mayor a 0');
+    return console.log(monto - ((descuento / 100) * monto));
+}
+
+descuento(1000, 20)
+
 // 17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+
+const aniosTranscurridos = (fecha = undefined) => {
+    if (fecha === undefined) return console.log('No ingresaste una fecha correcta');
+    if (!(fecha instanceof Date)) return console.log('No ingresaste una fecha correcta');
+
+    let aniosCalculo = new Date().getTime() - fecha.getTime(),
+        aniosMilisegundos = 1000 * 60 * 60 * 24 * 365,
+        aniosHumano = Math.floor(aniosCalculo / aniosMilisegundos)
+
+    return (Math.sign(aniosHumano) === -1)
+        ? console.log((`Faltan ${Math.abs(aniosHumano)} años para el ${fecha.getFullYear()}`))
+        : (Math.sign(aniosHumano) === 1)
+            ? console.log(`Han pasado ${aniosHumano} años desde ${fecha.getFullYear()}`)
+            : console.log(`Estamos en el año actual ${fecha.getFullYear()}`)
+}
+
+aniosTranscurridos("asdasdasd")
