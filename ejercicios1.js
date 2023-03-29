@@ -271,3 +271,15 @@ function validarNombre(nombre) {
 validarNombre("Agustin Salinas")
 
 // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+function validarCorreo(correo) {
+    if (typeof correo !== 'string') return console.log('No ingresaste un nombre correcto');
+
+    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/g.test(correo);
+
+    return (regexCorreo)
+        ? console.log(`El nombre ${correo} es valido`)
+        : console.log(`El nombre ${correo} no es valido`);
+}
+
+validarCorreo("agustin.cs96@gmail.com")
