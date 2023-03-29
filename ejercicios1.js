@@ -241,4 +241,33 @@ const aniosTranscurridos = (fecha = undefined) => {
             : console.log(`Estamos en el año actual ${fecha.getFullYear()}`)
 }
 
-aniosTranscurridos("asdasdasd")
+aniosTranscurridos(new Date(1996))
+
+// 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+
+function contarVocalesConsonantes(cadena) {
+    cadena = cadena.toLowerCase();
+
+    const numVocales = cadena.split("").filter(letra => "aeiouáéíóú".includes(letra)).length;
+    const numConsonantes = cadena.split("").filter(letra => !"aeiouáéíóú".includes(letra) && letra.match(/[a-z]/i)).length;
+
+    return console.log(`Vocales: ${numVocales}, Consonantes: ${numConsonantes}`)
+}
+
+contarVocalesConsonantes("Hólá múndó")
+
+// 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+
+function validarNombre(nombre) {
+    if (typeof nombre !== 'string') return console.log('No ingresaste un nombre correcto');
+
+    const regexNombre = /^[a-zA-Zaeiouáéíóú]+[\s]?[a-zA-Zaeiouáéíóú]+$/g.test(nombre);
+
+    return (regexNombre)
+        ? console.log(`El nombre ${nombre} es valido`)
+        : console.log(`El nombre ${nombre} no es valido`);
+}
+
+validarNombre("Agustin Salinas")
+
+// 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
