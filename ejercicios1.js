@@ -245,7 +245,7 @@ aniosTranscurridos(new Date(1996))
 
 // 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
 
-function contarVocalesConsonantes(cadena) {
+const contarVocalesConsonantes = (cadena) => {
     cadena = cadena.toLowerCase();
 
     const numVocales = cadena.split("").filter(letra => "aeiouáéíóú".includes(letra)).length;
@@ -258,7 +258,7 @@ contarVocalesConsonantes("Hólá múndó")
 
 // 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
 
-function validarNombre(nombre) {
+const validarNombre = (nombre) => {
     if (typeof nombre !== 'string') return console.log('No ingresaste un nombre correcto');
 
     const regexNombre = /^[a-zA-Zaeiouáéíóú]+[\s]?[a-zA-Zaeiouáéíóú]+$/g.test(nombre);
@@ -272,7 +272,7 @@ validarNombre("Agustin Salinas")
 
 // 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
 
-function validarCorreo(correo) {
+const validarCorreo = (correo) => {
     if (typeof correo !== 'string') return console.log('No ingresaste un nombre correcto');
 
     const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/g.test(correo);
@@ -283,3 +283,30 @@ function validarCorreo(correo) {
 }
 
 validarCorreo("agustin.cs96@gmail.com")
+
+// 21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+
+const arrayAlCuadrado = (numeros) => {
+    return console.log(numeros.map(num => num * num));
+}
+arrayAlCuadrado([1, 4, 5])
+
+// 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+const maxMinArray = (numeros) => {
+    const max = Math.max(...numeros);
+    const min = Math.min(...numeros);
+    return console.log([max,min]);
+  }
+
+  maxMinArray([1,4,5,99,-60])
+
+// 23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+
+const ordenarParImpar = (numeros) => {
+    const pares = numeros.filter(num => num % 2 === 0)
+    const impares = numeros.filter(num => num % 2 !== 0)
+
+    return console.log({pares, impares}); 
+}
+
+ordenarParImpar([1,2,3,4,5,6,7,8,9,0])
