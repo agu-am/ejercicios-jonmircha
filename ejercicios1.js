@@ -566,3 +566,5 @@ const misPelis = [{
 }]
 
 misPelis.forEach(item => new Pelicula(item).fichaTecnica())
+
+
